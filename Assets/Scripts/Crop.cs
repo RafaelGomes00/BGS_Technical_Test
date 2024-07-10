@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crop : Interactable
 {
+    [SerializeField] private string cropName;
     [SerializeField] private float value;
     [SerializeField] private float harvestCooldown;
     [SerializeField] private Sprite sprite;
@@ -35,5 +36,10 @@ public class Crop : Interactable
     public Sprite GetSprite()
     {
         return sprite;
+    }
+
+    public string GetName()
+    {
+        return cropName;
     }
 }

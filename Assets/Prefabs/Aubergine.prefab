@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9083ca517a60204aa8df99151224041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cropName: Aubergine
   value: 20
   harvestCooldown: 10
   sprite: {fileID: 21300000, guid: 3757151fd001a864bb1f65f8f52f10e6, type: 3}

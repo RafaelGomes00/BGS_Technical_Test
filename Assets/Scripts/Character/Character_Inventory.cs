@@ -3,28 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character_Inventory : MonoBehaviour
+public static class Character_Inventory
 {
-    public int moneyQuantity { get; private set; }
-    public List<Item> items { get; private set; }
+    public static float moneyQuantity { get; private set; }
+    public static List<Item> items { get; private set; }
 
-    static Character_Inventory instance;
-    public static Character_Inventory Instance => instance ?? FindObjectOfType<Character_Inventory>();
-
-    private void OnEnable()
+    public static void OnEnable()
     {
         items = new List<Item>();
         GameEvents.OnHarvestCrop += OnHarvestCrop;
     }
 
-    private void OnHarvestCrop(Crop crop)
+    private static void OnHarvestCrop(Crop crop)
     {
-        items.Add(new Item(crop.GetValue(), false, crop.GetSprite()));
-        Debug.Log(items.Count);
+        items.Add(new Item(crop.GetValue(), false, crop.GetSprite(), crop.GetName()));
     }
 
-    private void OnDisable()
+    public static void OnDisable()
     {
         GameEvents.OnHarvestCrop -= OnHarvestCrop;
+    }
+
+    public static void Sell(Item itemToSell)
+    {
+        if(items.Contains(itemToSell))
+        {
+            moneyQuantity += itemToSell.value;
+            items.Remove(itemToSell);
+
+            Debug.Log($"Item {itemToSell.name} succesfully sold for {itemToSell.value} coins");
+        }
+        else
+        {
+            Debug.LogError("Item does not exist");
+        }
     }
 }
