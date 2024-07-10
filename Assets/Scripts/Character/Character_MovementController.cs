@@ -58,7 +58,7 @@ public class Character_MovementController : MonoBehaviour
     private void CheckMovement()
     {
         Vector2 moveDir = new Vector3(0, 0);
-        animController.SetMoveValue(1);
+        float moveSpeedValue = 1;
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -86,9 +86,10 @@ public class Character_MovementController : MonoBehaviour
         }
         else
         {
-            animController.SetMoveValue(0);
+            moveSpeedValue = 0;
         }
 
+        animController.SetMoveValue(moveSpeedValue);
         rigidBody.MovePosition(rigidBody.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
 

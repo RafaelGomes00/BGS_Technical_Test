@@ -16,7 +16,11 @@ MonoBehaviour:
   sprite: {fileID: 0}
   value: 0
   canEquip: 1
+  defaultOption: {fileID: 0}
+  walkAnimationSheet: {fileID: 11400000, guid: 33add6448d0e84b468ccdb556c638410, type: 2}
+  idleAnimationSheet: {fileID: 11400000, guid: 91316eeb266b9f246b14fc83f0b712d7, type: 2}
+  runAnimationSheet: {fileID: 11400000, guid: 0490638b867616b44abe8b786de16e99, type: 2}
+  dragAnimationSheet: {fileID: 11400000, guid: b9e9821581ba69a4883811de99813258, type: 2}
   itemType: 1
   incompatibleItemType: 0
-  walkAnimationSheet: {fileID: 11400000, guid: 33add6448d0e84b468ccdb556c638410, type: 2}
-  IdleAnimationSheet: {fileID: 11400000, guid: 91316eeb266b9f246b14fc83f0b712d7, type: 2}
+  resolveItemIncompatibility: 0
