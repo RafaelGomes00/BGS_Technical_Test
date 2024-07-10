@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31062e085b9f2294b8169d80215eda5f, type: 3}
+  m_Name: Hat1_Idle
+  m_EditorClassIdentifier: 
+  frameDelay: 0
+  frames:
+  - upSprite: {fileID: -339478176, guid: cbe11909a014f384985b98d6db044d41, type: 3}
+    downSprite: {fileID: -541054659, guid: cbe11909a014f384985b98d6db044d41, type: 3}
+    rightSprite: {fileID: 822895579, guid: cbe11909a014f384985b98d6db044d41, type: 3}
+    leftSprite: {fileID: 242390161, guid: cbe11909a014f384985b98d6db044d41, type: 3}
