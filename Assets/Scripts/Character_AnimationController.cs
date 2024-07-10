@@ -26,10 +26,10 @@ public class Character_AnimationController : MonoBehaviour
         int frame = (int)(Time.time * bodyAnimationHolder.GetAnimation(moveValue).frameDelay);
         frame = frame % bodyAnimationHolder.GetAnimation(moveValue).frames.Length;
 
-        bodySR.sprite = bodyAnimationHolder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
-        torsoSR.sprite = clothingAnimationHolder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
-        hairSR.sprite = hairAnimationHolder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
-        hatSR.sprite = hatAnimationHolder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
+        SetAnimationSprite(bodySR, bodyAnimationHolder, frame, moveValue, moveDirection);
+        SetAnimationSprite(torsoSR, clothingAnimationHolder, frame, moveValue, moveDirection);
+        SetAnimationSprite(hairSR, hairAnimationHolder, frame, moveValue, moveDirection);
+        SetAnimationSprite(hatSR, hatAnimationHolder, frame, moveValue, moveDirection);
     }
 
     public void SetMoveValue(float value)
@@ -40,5 +40,16 @@ public class Character_AnimationController : MonoBehaviour
     public void SetDirection(Direction dir)
     {
         moveDirection = dir;
+    }
+
+    private void SetAnimationSprite(SpriteRenderer renderer, AnimationHolder holder, int frame, float moveValue, Direction moveDirection)
+    {
+        if (holder != null)
+        {
+            renderer.gameObject.SetActive(true);
+            renderer.sprite = holder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
+        }
+        else
+            renderer.gameObject.SetActive(false);
     }
 }
