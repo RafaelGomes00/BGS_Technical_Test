@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameEvents
 {
-    public delegate void HarvestCrop(Crop crop);
+    public delegate void HarvestCrop(Item crop);
     public static event HarvestCrop OnHarvestCrop;
-    public static void HarvestCropMethod(Crop crop)
+    public static void HarvestCropMethod(Item crop)
     {
         OnHarvestCrop?.Invoke(crop);
     }

@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
-  m_Name: Clothing0_Holder
+  m_Name: Clothing1_Holder
   m_EditorClassIdentifier: 
-  walkAnimationSheet: {fileID: 11400000, guid: c23ef17c3001cdf42818097ba96bd84c, type: 2}
-  IdleAnimationSheet: {fileID: 11400000, guid: 42f40f5a40de7f24fb4d6a26180bba60, type: 2}
+  value: 100
+  canEquip: 1
+  sprite: {fileID: 130014088, guid: 028c81675902a064a88a15900be28e9a, type: 3}
+  itemName: Yellow outfit
+  itemType: 3
+  walkAnimationSheet: {fileID: 11400000, guid: b447b5b62daf8874e95a0e2dd7c37d06, type: 2}
+  IdleAnimationSheet: {fileID: 11400000, guid: 76e86c76350655a438d62069ff5e6dad, type: 2}

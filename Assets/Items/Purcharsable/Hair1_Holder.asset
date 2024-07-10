@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
-  m_Name: Body0_Holder
+  m_Name: Hair1_Holder
   m_EditorClassIdentifier: 
-  walkAnimationSheet: {fileID: 11400000, guid: 33add6448d0e84b468ccdb556c638410, type: 2}
-  IdleAnimationSheet: {fileID: 11400000, guid: 91316eeb266b9f246b14fc83f0b712d7, type: 2}
+  value: 100
+  canEquip: 1
+  sprite: {fileID: -76533555, guid: 0270268ee1baef94f9a0515b1060b1f2, type: 3}
+  itemName: Short hair
+  itemType: 1
+  walkAnimationSheet: {fileID: 11400000, guid: 9bc34019bffd0a64f9a4071cde617461, type: 2}
+  IdleAnimationSheet: {fileID: 11400000, guid: cea30fe2b2c8e1546bcdd7b098fa6496, type: 2}

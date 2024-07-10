@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
-  m_Name: Clothing2_Holder
+  m_Name: Body0_Holder
   m_EditorClassIdentifier: 
-  walkAnimationSheet: {fileID: 11400000, guid: 0f3a26866e607d5449da887b5fe5e6d6, type: 2}
-  IdleAnimationSheet: {fileID: 11400000, guid: 788d7bb68dba2e74fa9b335c08396021, type: 2}
+  value: 0
+  canEquip: 1
+  sprite: {fileID: 0}
+  itemName: Default_Body
+  itemType: 0
+  walkAnimationSheet: {fileID: 11400000, guid: 33add6448d0e84b468ccdb556c638410, type: 2}
+  IdleAnimationSheet: {fileID: 11400000, guid: 91316eeb266b9f246b14fc83f0b712d7, type: 2}

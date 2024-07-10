@@ -9,22 +9,40 @@ public class ItemSelection : MonoBehaviour
     [SerializeField] ItemDisplay selectionDisplay;
     [SerializeField] TextMeshProUGUI selectionName;
     [SerializeField] TextMeshProUGUI selectionPrice;
-    [SerializeField] Button sellButton;
+    [SerializeField] Button confirmButton;
+    [SerializeField] TextMeshProUGUI confirmButtonText;
 
     private Item selectedItem;
 
     public void Select(Item item)
     {
         selectionDisplay.Initialize(item);
-        selectionName.text = item.name;
-        selectionPrice.text = item.value.ToString();
+        selectionName.text = item.GetName();
+        selectionPrice.text = item.GetCost().ToString();
 
         selectedItem = item;
     }
 
-    public void Sell()
+    public void SellItem()
     {
-        Character_Inventory.Sell(selectedItem);
-        UIManager.Instance.UpdateShop();
+        confirmButtonText.text = "Sell";
+        confirmButton.onClick.RemoveAllListeners();
+        confirmButton.onClick.AddListener(delegate
+        {
+            Character_Inventory.Sell(selectedItem);
+            UIManager.Instance.UpdateSellShop();
+        });
+    }
+
+    public void BuyItem()
+    {
+        confirmButtonText.text = "Buy";
+        confirmButton.onClick.RemoveAllListeners();
+        confirmButton.onClick.AddListener(delegate
+        {
+            Character_Inventory.Buy(selectedItem);
+            UIManager.Instance.UpdateBuyShop();
+        }
+        );
     }
 }

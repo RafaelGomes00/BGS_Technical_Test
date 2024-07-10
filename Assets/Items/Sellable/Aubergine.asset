@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
-  m_Name: Hair0_Holder
+  m_Script: {fileID: 11500000, guid: fd38828272d8c7d42bf8b01026edc085, type: 3}
+  m_Name: Aubergine
   m_EditorClassIdentifier: 
-  walkAnimationSheet: {fileID: 11400000, guid: f9e4b760f8b7c5f46b743c2cec7b8b9d, type: 2}
-  IdleAnimationSheet: {fileID: 11400000, guid: e4d1659043e49024384855bf48f3938d, type: 2}
+  value: 20
+  canEquip: 0
+  sprite: {fileID: 21300000, guid: 3757151fd001a864bb1f65f8f52f10e6, type: 3}
+  itemName: Aubergine

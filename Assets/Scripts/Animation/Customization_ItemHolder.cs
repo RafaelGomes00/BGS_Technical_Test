@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "BGS_TechnicalTest/Create Animation holder", fileName = "New animation holder")]
-public class AnimationHolder : ScriptableObject
+[CreateAssetMenu(menuName = "BGS_TechnicalTest/Create customization holder", fileName = "New customization holder")]
+public class Customization_ItemHolder : Item
 {
+    [SerializeField] private ItemType itemType;
     [SerializeField] private AnimationSheet walkAnimationSheet;
     [SerializeField] private AnimationSheet IdleAnimationSheet;
 
@@ -13,5 +14,10 @@ public class AnimationHolder : ScriptableObject
     {
         if(moveValue > 0) return walkAnimationSheet;
         return IdleAnimationSheet;
+    }
+
+    public ItemType GetItemType()
+    {
+        return itemType;
     }
 }

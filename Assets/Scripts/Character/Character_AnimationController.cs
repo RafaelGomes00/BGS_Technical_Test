@@ -10,10 +10,10 @@ public class Character_AnimationController : MonoBehaviour
     public float moveValue { get; private set; }
 
     [Header("Animation Sheet")]
-    [SerializeField] private AnimationHolder bodyAnimationHolder;
-    [SerializeField] private AnimationHolder clothingAnimationHolder;
-    [SerializeField] private AnimationHolder hairAnimationHolder;
-    [SerializeField] private AnimationHolder hatAnimationHolder;
+    [SerializeField] private Customization_ItemHolder bodyAnimationHolder;
+    [SerializeField] private Customization_ItemHolder clothingAnimationHolder;
+    [SerializeField] private Customization_ItemHolder hairAnimationHolder;
+    [SerializeField] private Customization_ItemHolder hatAnimationHolder;
 
     [Header("References")]
     [SerializeField] private SpriteRenderer bodySR;
@@ -42,7 +42,7 @@ public class Character_AnimationController : MonoBehaviour
         moveDirection = dir;
     }
 
-    private void SetAnimationSprite(SpriteRenderer renderer, AnimationHolder holder, int frame, float moveValue, Direction moveDirection)
+    private void SetAnimationSprite(SpriteRenderer renderer, Customization_ItemHolder holder, int frame, float moveValue, Direction moveDirection)
     {
         if (holder != null)
         {
