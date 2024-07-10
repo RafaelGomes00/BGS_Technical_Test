@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class ShopUI : MonoBehaviour
     [Header("Buy panel")]
     [SerializeField] GameObject buyPanel;
     [SerializeField] Transform availableItemsParent;
+    [SerializeField] Button buyPanelButton;
     [SerializeField] List<Customization_ItemHolder> purchasableItems;
 
     [Header("Sell panel")]
     [SerializeField] GameObject sellPanel;
+    [SerializeField] Button sellPanelButton;
     [SerializeField] Transform sellableItemsParent;
 
     private List<GameObject> instantiatedItems = new List<GameObject>();
@@ -89,6 +92,8 @@ public class ShopUI : MonoBehaviour
     }
     public void Close()
     {
+        buyPanelButton.interactable = true;
+        sellPanelButton.interactable = false;
         ClearElements();
         shopPanel.SetActive(false);
     }

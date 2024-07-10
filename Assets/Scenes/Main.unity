@@ -1876,6 +1876,7 @@ MonoBehaviour:
   itemDisplayGO: {fileID: 1252983917}
   buyPanel: {fileID: 88700248}
   availableItemsParent: {fileID: 1296382166}
+  buyPanelButton: {fileID: 454266609}
   purchasableItems:
   - {fileID: 11400000, guid: 2b667587470a07a469a53c3f13f00d67, type: 2}
   - {fileID: 11400000, guid: 992b7fe7b0c5a704497667d4fe20c2d6, type: 2}
@@ -1884,6 +1885,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f23e621480fbc1c42ba925ffcad8ffa5, type: 2}
   - {fileID: 11400000, guid: 60306ed1a122c8a44ac3509d57bc534b, type: 2}
   sellPanel: {fileID: 229899840}
+  sellPanelButton: {fileID: 1868078167}
   sellableItemsParent: {fileID: 82256111}
 --- !u!1 &424441617
 GameObject:
