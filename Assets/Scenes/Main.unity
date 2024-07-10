@@ -1827,6 +1827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423172016}
+  - component: {fileID: 423172017}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1858,6 +1859,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -81}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &423172017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423172015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59880a552fc4c1d48b60173b29fd312a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 423172015}
+  itemSelection: {fileID: 1867236857}
+  itemDisplayGO: {fileID: 1252983917}
+  buyPanel: {fileID: 88700248}
+  availableItemsParent: {fileID: 1296382166}
+  purchasableItems:
+  - {fileID: 11400000, guid: 2b667587470a07a469a53c3f13f00d67, type: 2}
+  - {fileID: 11400000, guid: 992b7fe7b0c5a704497667d4fe20c2d6, type: 2}
+  - {fileID: 11400000, guid: 1b63be24a452016469b0b07e6d297c77, type: 2}
+  - {fileID: 11400000, guid: 4174206dc5cbbb048a493a1e0053361c, type: 2}
+  - {fileID: 11400000, guid: f23e621480fbc1c42ba925ffcad8ffa5, type: 2}
+  - {fileID: 11400000, guid: 60306ed1a122c8a44ac3509d57bc534b, type: 2}
+  sellPanel: {fileID: 229899840}
+  sellableItemsParent: {fileID: 82256111}
 --- !u!1 &424441617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12021,7 +12048,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1793054161}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowBuyPanel
+        m_MethodName: ShowBuyShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25625,33 +25652,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 638513167}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 423172015}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1793054161}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ClearElements
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26486,21 +26489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   darkBackground: {fileID: 638513167}
-  shopPanel: {fileID: 423172015}
-  itemSelection: {fileID: 1867236857}
-  itemDisplayGO: {fileID: 6231679128445769392, guid: 8f4c4069044cb204299dd4c3455c73fc, type: 3}
   coinsText: {fileID: 348612256}
-  buyPanel: {fileID: 88700248}
-  availableItemsParent: {fileID: 1296382166}
-  purchasableItems:
-  - {fileID: 11400000, guid: 2b667587470a07a469a53c3f13f00d67, type: 2}
-  - {fileID: 11400000, guid: 992b7fe7b0c5a704497667d4fe20c2d6, type: 2}
-  - {fileID: 11400000, guid: 1b63be24a452016469b0b07e6d297c77, type: 2}
-  - {fileID: 11400000, guid: 4174206dc5cbbb048a493a1e0053361c, type: 2}
-  - {fileID: 11400000, guid: f23e621480fbc1c42ba925ffcad8ffa5, type: 2}
-  - {fileID: 11400000, guid: 60306ed1a122c8a44ac3509d57bc534b, type: 2}
-  sellPanel: {fileID: 229899840}
-  itemDisplayParent: {fileID: 82256111}
+  shopUI: {fileID: 423172017}
   inventoryUI: {fileID: 1964193047}
 --- !u!1001 &1839583250
 PrefabInstance:
@@ -26862,7 +26852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1793054161}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowSellPanel
+        m_MethodName: ShowSellShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

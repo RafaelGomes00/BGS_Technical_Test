@@ -55,4 +55,10 @@ public class InventoryUI : MonoBehaviour
 
         instantiatedItems = new List<ItemDisplay>();
     }
+
+    public void Close()
+    {
+        ClearInventory();
+        inventoryBackground.SetActive(false);
+    }
 }
