@@ -17,6 +17,7 @@ public class InventoryUI : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnEquipItem += OnEquipItem;
+        GameEvents.OnUnequipItem += OnUnequipItem;
     }
 
     public void ShowInventory()
@@ -48,7 +49,11 @@ public class InventoryUI : MonoBehaviour
         }
 
         itemSelection.Select(item);
-        itemSelection.EquipItem();
+
+        if (Character_Inventory.CheckEquipped(item as Customization_ItemHolder))
+            itemSelection.UnequipItem();
+        else
+            itemSelection.EquipItem();
     }
 
     private void ClearInventory()
@@ -72,9 +77,14 @@ public class InventoryUI : MonoBehaviour
         itemSelection.Deselect();
     }
 
+    private void OnUnequipItem(Customization_ItemHolder selectedItem)
+    {
+        itemSelection.Deselect();
+    }
     private void OnDisable()
     {
         GameEvents.OnEquipItem -= OnEquipItem;
+        GameEvents.OnUnequipItem -= OnUnequipItem;
     }
 
 }

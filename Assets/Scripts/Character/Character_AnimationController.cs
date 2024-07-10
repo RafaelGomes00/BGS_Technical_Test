@@ -24,6 +24,23 @@ public class Character_AnimationController : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnEquipItem += OnEquipItem;
+        GameEvents.OnUnequipItem += OnUnequipItem;
+    }
+
+    private void OnUnequipItem(Customization_ItemHolder item)
+    {
+        switch (item.GetItemType())
+        {
+            case ItemType.Hair:
+                hairAnimationHolder = null;
+                break;
+            case ItemType.Outfit:
+                clothingAnimationHolder = null;
+                break;
+            case ItemType.Hat:
+                hatAnimationHolder = null;
+                break;
+        }
     }
 
     private void OnEquipItem(Customization_ItemHolder item)
@@ -93,5 +110,6 @@ public class Character_AnimationController : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.OnEquipItem -= OnEquipItem;
+        GameEvents.OnUnequipItem -= OnUnequipItem;
     }
 }

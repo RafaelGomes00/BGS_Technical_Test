@@ -19,7 +19,7 @@ public class ItemSelection : MonoBehaviour
     public void Select(Item item)
     {
         gameObject.SetActive(true);
-        errorText.SetActive(false);
+        errorText?.SetActive(false);
         selectionDisplay.Initialize(item);
         selectionName.text = item.GetName();
         selectionPrice.text = item.GetCost().ToString();
@@ -29,11 +29,23 @@ public class ItemSelection : MonoBehaviour
 
     public void EquipItem()
     {
+        confirmButtonText.text = "Equip";
         confirmButton.onClick.RemoveAllListeners();
         confirmButton.onClick.AddListener(delegate
         {
             if (selectedItem.GetType() == typeof(Customization_ItemHolder))
                 Character_Inventory.Equip((Customization_ItemHolder)selectedItem);
+        });
+    }
+
+    public void UnequipItem()
+    {
+        confirmButtonText.text = "Unequip";
+        confirmButton.onClick.RemoveAllListeners();
+        confirmButton.onClick.AddListener(delegate
+        {
+            if (selectedItem.GetType() == typeof(Customization_ItemHolder))
+                Character_Inventory.Unequip((Customization_ItemHolder)selectedItem);
         });
     }
 
