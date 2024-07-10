@@ -13342,7 +13342,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1470369368, guid: a2c9faf88f9828f4cb76728fc9983210, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14689,7 +14689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6938903654089937224, guid: c311f700c46ab1947ae3a96de28ae804, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.25
+      value: 4.85
       objectReference: {fileID: 0}
     - target: {fileID: 6938903654089937224, guid: c311f700c46ab1947ae3a96de28ae804, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14883,7 +14883,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 73cad226f492a8743b10a0cd8a026131, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23338,7 +23338,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1089088491, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23708,7 +23708,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -31653298, guid: 5a5d21ae4e6d3184fba77555bad1ed6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26566,7 +26566,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2046694780, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -28238,41 +28238,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1860223801}
     m_Modifications:
-    - target: {fileID: 80749734930463447, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2393041247270303794, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2992355051806535419, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371229845436371713, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3778051291453894538, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
       propertyPath: m_Name
       value: PinkHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778051291453894538, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419527164625146082, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419527164625146082, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419527164625146082, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4419527164625146082, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28313,14 +28281,6 @@ PrefabInstance:
     - target: {fileID: 4419527164625146082, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 7404122572866326791, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262958248426177837, guid: de55ef2844a8cbc4ba3905570c1dbd3a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
