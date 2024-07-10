@@ -18,15 +18,18 @@ public class UIManager : MonoBehaviour
     [Header("Buy panel")]
     [SerializeField] GameObject buyPanel;
     [SerializeField] Transform availableItemsParent;
+    [SerializeField] List<Customization_ItemHolder> purchasableItems;
 
     [Header("Sell panel")]
     [SerializeField] GameObject sellPanel;
     [SerializeField] Transform itemDisplayParent;
 
-    [SerializeField] List<Customization_ItemHolder> purchasableItems;
+    [Header("Inventory")]
+    [SerializeField] InventoryUI inventoryUI;
 
     private List<GameObject> instantiatedItems = new List<GameObject>();
 
+#region Buy
     public void ShowBuyPanel()
     {
         darkBackground.SetActive(true);
@@ -61,6 +64,9 @@ public class UIManager : MonoBehaviour
         itemSelection.gameObject.SetActive(true);
     }
 
+#endregion
+
+#region Sell
     public void ShowSellPanel()
     {
         darkBackground.SetActive(true);
@@ -101,8 +107,15 @@ public class UIManager : MonoBehaviour
         instantiatedItems = new List<GameObject>();
     }
 
+#endregion
+    
     private void UpdateCoins()
     {
         coinsText.text = Character_Inventory.moneyQuantity.ToString();
+    }
+
+    public void ShowInventory()
+    {
+        inventoryUI.ShowInventory();
     }
 }

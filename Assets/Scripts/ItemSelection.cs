@@ -23,6 +23,16 @@ public class ItemSelection : MonoBehaviour
         selectedItem = item;
     }
 
+    public void EquipItem()
+    {
+        confirmButton.onClick.RemoveAllListeners();
+        confirmButton.onClick.AddListener(delegate
+        {
+            if (selectedItem.GetType() == typeof(Customization_ItemHolder))
+                Character_Inventory.Equip((Customization_ItemHolder)selectedItem);
+        });
+    }
+
     public void SellItem()
     {
         confirmButtonText.text = "Sell";

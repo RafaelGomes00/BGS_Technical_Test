@@ -10,4 +10,11 @@ public class GameEvents
     {
         OnHarvestCrop?.Invoke(crop);
     }
+
+    public delegate void EquipItem(Customization_ItemHolder item);
+    public static event EquipItem OnEquipItem;
+    public static void EquipItemMethod(Customization_ItemHolder item)
+    {
+        OnEquipItem?.Invoke(item);
+    }
 }

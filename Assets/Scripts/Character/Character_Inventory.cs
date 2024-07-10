@@ -55,4 +55,9 @@ public static class Character_Inventory
             Debug.LogError("Not enough coins");
         }
     }
+
+    public static void Equip(Customization_ItemHolder selectedItem)
+    {
+        GameEvents.EquipItemMethod(selectedItem);
+    }
 }

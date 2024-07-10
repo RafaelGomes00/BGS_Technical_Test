@@ -21,6 +21,27 @@ public class Character_AnimationController : MonoBehaviour
     [SerializeField] private SpriteRenderer hairSR;
     [SerializeField] private SpriteRenderer hatSR;
 
+    private void OnEnable()
+    {
+        GameEvents.OnEquipItem += OnEquipItem;
+    }
+
+    private void OnEquipItem(Customization_ItemHolder item)
+    {
+        switch (item.GetItemType())
+        {
+            case ItemType.Hair:
+                hairAnimationHolder = item;
+                break;
+            case ItemType.Outfit:
+                clothingAnimationHolder = item;
+                break;
+            case ItemType.Hat:
+                hatAnimationHolder = item;
+                break;
+        }
+    }
+
     private void Update()
     {
         int frame = (int)(Time.time * bodyAnimationHolder.GetAnimation(moveValue).frameDelay);
@@ -51,5 +72,10 @@ public class Character_AnimationController : MonoBehaviour
         }
         else
             renderer.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEquipItem -= OnEquipItem;
     }
 }

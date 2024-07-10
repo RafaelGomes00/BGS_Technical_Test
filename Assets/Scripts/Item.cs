@@ -24,4 +24,9 @@ public class Item : ScriptableObject
     {
         return sprite;
     }
+
+    public bool CanEquip()
+    {
+        return canEquip;
+    }
 }
