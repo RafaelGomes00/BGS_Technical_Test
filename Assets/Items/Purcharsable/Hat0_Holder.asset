@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
   m_Name: Hat0_Holder
   m_EditorClassIdentifier: 
+  itemName: Cap hat
+  sprite: {fileID: 21300000, guid: 08df08cb95341394983ddb8f02395639, type: 3}
   value: 100
   canEquip: 1
-  sprite: {fileID: 2046694780, guid: 532d06333d46898499043131b09fa39f, type: 3}
-  itemName: Cap hat
-  itemType: 2
   walkAnimationSheet: {fileID: 11400000, guid: ef83e753138ca714abc7f1b20b6b7b6e, type: 2}
   IdleAnimationSheet: {fileID: 11400000, guid: dec0b328cdbfea34b967b9d3b17a0be2, type: 2}
+  itemType: 3
+  incompatibleItemType: 2
+  resolveItemIncompatibility: 1

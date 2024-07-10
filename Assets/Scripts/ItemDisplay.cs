@@ -12,8 +12,7 @@ public class ItemDisplay : MonoBehaviour
     public void Initialize(Item item, Action<Item> onClickItem = null)
     {
         itemImage.sprite = item.GetDisplaySprite();
-
-        if (onClickItem == null) button.enabled = false;
-        else button.onClick.AddListener(() => onClickItem?.Invoke(item));
+        button.enabled = onClickItem != null;
+        button.onClick.AddListener(() => onClickItem?.Invoke(item));
     }
 }

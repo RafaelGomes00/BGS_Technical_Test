@@ -21,6 +21,60 @@ public class Character_AnimationController : MonoBehaviour
     [SerializeField] private SpriteRenderer hairSR;
     [SerializeField] private SpriteRenderer hatSR;
 
+    private void OnEnable()
+    {
+        GameEvents.OnEquipItem += OnEquipItem;
+        GameEvents.OnUnequipItem += OnUnequipItem;
+    }
+
+    private void OnUnequipItem(Customization_ItemHolder item)
+    {
+        switch (item.GetItemType())
+        {
+            case ItemType.Hair:
+                hairAnimationHolder = null;
+                break;
+            case ItemType.Outfit:
+                clothingAnimationHolder = null;
+                break;
+            case ItemType.Hat:
+                hatAnimationHolder = null;
+                break;
+        }
+    }
+
+    private void OnEquipItem(Customization_ItemHolder item)
+    {
+        switch (item.GetItemType())
+        {
+            case ItemType.Hair:
+                hairAnimationHolder = item;
+                break;
+            case ItemType.Outfit:
+                clothingAnimationHolder = item;
+                break;
+            case ItemType.Hat:
+                hatAnimationHolder = item;
+                break;
+        }
+
+        if (item.resolveItemIncompatibility)
+        {
+            switch (item.GetItemIncompatibility())
+            {
+                case ItemType.Hair:
+                    hairAnimationHolder = null;
+                    break;
+                case ItemType.Outfit:
+                    clothingAnimationHolder = null;
+                    break;
+                case ItemType.Hat:
+                    hatAnimationHolder = null;
+                    break;
+            }
+        }
+    }
+
     private void Update()
     {
         int frame = (int)(Time.time * bodyAnimationHolder.GetAnimation(moveValue).frameDelay);
@@ -51,5 +105,11 @@ public class Character_AnimationController : MonoBehaviour
         }
         else
             renderer.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEquipItem -= OnEquipItem;
+        GameEvents.OnUnequipItem -= OnUnequipItem;
     }
 }

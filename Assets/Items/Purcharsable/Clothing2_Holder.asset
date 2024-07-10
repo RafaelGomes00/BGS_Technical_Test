@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
   m_Name: Clothing2_Holder
   m_EditorClassIdentifier: 
+  itemName: Green outfit
+  sprite: {fileID: 21300000, guid: 41b122d4a12214a43ae00b377fea853b, type: 3}
   value: 100
   canEquip: 1
-  sprite: {fileID: -1078562088, guid: 1c2709101f52ccf45b870909834c062d, type: 3}
-  itemName: Green outfit
-  itemType: 3
   walkAnimationSheet: {fileID: 11400000, guid: 0f3a26866e607d5449da887b5fe5e6d6, type: 2}
   IdleAnimationSheet: {fileID: 11400000, guid: 788d7bb68dba2e74fa9b335c08396021, type: 2}
+  itemType: 4
+  incompatibleItemType: 0
+  resolveItemIncompatibility: 1

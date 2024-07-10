@@ -24,6 +24,11 @@ public class Character_MovementController : MonoBehaviour
             if (hits.Length > 0)
                 hits[0].gameObject.GetComponent<Interactable>().Interact();
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            UIManager.Instance.ShowInventory();
+        }
     }
 
     private void FixedUpdate()
@@ -37,25 +42,25 @@ public class Character_MovementController : MonoBehaviour
         Vector2 moveDir = new Vector3(0, 0);
         animController.SetMoveValue(1);
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             //Move up
             moveDir = Vector2.up;
             animController.SetDirection(Direction.Up);
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             //Move left
             moveDir = Vector2.left;
             animController.SetDirection(Direction.Left);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             //Move Down
             moveDir = Vector2.down;
             animController.SetDirection(Direction.Down);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             //Move Right
             moveDir = Vector2.right;

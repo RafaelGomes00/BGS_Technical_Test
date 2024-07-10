@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
   m_Name: Clothing0_Holder
   m_EditorClassIdentifier: 
+  itemName: Default_Outfit
+  sprite: {fileID: 0}
   value: 0
   canEquip: 1
-  sprite: {fileID: 0}
-  itemName: Default_Outfit
-  itemType: 3
+  itemType: 4
+  incompatibleItemType: 0
   walkAnimationSheet: {fileID: 11400000, guid: c23ef17c3001cdf42818097ba96bd84c, type: 2}
   IdleAnimationSheet: {fileID: 11400000, guid: 42f40f5a40de7f24fb4d6a26180bba60, type: 2}
