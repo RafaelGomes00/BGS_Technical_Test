@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,13 +23,30 @@ public class Character_MovementController : MonoBehaviour
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, overlapCircleSize, LayerMask.GetMask("Interactable"));
             if (hits.Length > 0)
-                hits[0].gameObject.GetComponent<Interactable>().Interact();
+                GetNearestObject(hits)?.Interact();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             UIManager.Instance.ShowInventory();
         }
+    }
+
+    private Interactable GetNearestObject(Collider2D[] hits)
+    {
+        Interactable result = null;
+        float smallerDistance = float.MaxValue;
+        foreach (Collider2D collider in hits)
+        {
+            float distance = Vector2.Distance(collider.transform.position, transform.position);
+            Interactable interactableRef = collider.GetComponent<Interactable>();
+            if (smallerDistance > distance && interactableRef.IsInteractable())
+            {
+                smallerDistance = distance;
+                result = interactableRef;
+            }
+        }
+        return result;
     }
 
     private void FixedUpdate()
@@ -77,7 +95,7 @@ public class Character_MovementController : MonoBehaviour
     private void CheckInteractableObjects()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, overlapCircleSize, LayerMask.GetMask("Interactable"));
-        if (hit)
+        if (hit != null && hit.gameObject.GetComponent<Interactable>().IsInteractable())
             interactKey.SetActive(true);
         else
             interactKey.SetActive(false);
