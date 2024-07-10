@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31062e085b9f2294b8169d80215eda5f, type: 3}
+  m_Name: Body0_Walking
+  m_EditorClassIdentifier: 
+  frameDelay: 8
+  frames:
+  - upSprite: {fileID: 1760201098, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: 2092765533, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: -1835275663, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: -696054467, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+  - upSprite: {fileID: 1060904272, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: -1086832277, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: -1192524997, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: -1568120860, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+  - upSprite: {fileID: -1795784184, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: -39517960, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: 1104314730, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: -1615353273, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+  - upSprite: {fileID: 1544799967, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: -1211927459, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: 198113460, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: 88864091, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+  - upSprite: {fileID: -1140397403, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: 1338146294, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: 803211601, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: -616281005, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+  - upSprite: {fileID: -943335186, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    downSprite: {fileID: -1694541072, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    rightSprite: {fileID: 62981829, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
+    leftSprite: {fileID: -943762391, guid: c4df980d6e4cfe945b2d149471b3a5f4, type: 3}
