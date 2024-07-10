@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31062e085b9f2294b8169d80215eda5f, type: 3}
+  m_Name: Hat0_Walking
+  m_EditorClassIdentifier: 
+  frameDelay: 0
+  frames:
+  - upSprite: {fileID: -76072177, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: 2146003858, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: -610018460, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: 384281582, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+  - upSprite: {fileID: -1353073661, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: 1135715831, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: 2140475986, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: 93772184, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+  - upSprite: {fileID: -835014907, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: 772424995, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: -1802838367, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: -1100582957, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+  - upSprite: {fileID: -2096024257, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: -1443559917, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: 929698140, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: -1882198588, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+  - upSprite: {fileID: 1728381373, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: 1702683442, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: 908463225, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: -815070242, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+  - upSprite: {fileID: -2031542308, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    downSprite: {fileID: -1239760581, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    rightSprite: {fileID: -418441444, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
+    leftSprite: {fileID: -1015194458, guid: e0bb3b776a282e242b8571f0a5a8b7e8, type: 3}
