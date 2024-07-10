@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
   m_Name: Hair0_Holder
   m_EditorClassIdentifier: 
+  itemName: Long hair
+  sprite: {fileID: 21300000, guid: b5fded740b30af64f8e9c940cefa052a, type: 3}
   value: 100
   canEquip: 1
-  sprite: {fileID: 1470369368, guid: 3c3cf9472d9326b44aa526e0185027fb, type: 3}
-  itemName: Long hair
-  itemType: 1
   walkAnimationSheet: {fileID: 11400000, guid: f9e4b760f8b7c5f46b743c2cec7b8b9d, type: 2}
   IdleAnimationSheet: {fileID: 11400000, guid: e4d1659043e49024384855bf48f3938d, type: 2}
+  itemType: 2
+  incompatibleItemType: 3
+  resolveItemIncompatibility: 1

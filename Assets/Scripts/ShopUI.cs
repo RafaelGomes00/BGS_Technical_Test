@@ -32,7 +32,7 @@ public class ShopUI : MonoBehaviour
     public void UpdateBuyShop()
     {
         ClearElements();
-        itemSelection.gameObject.SetActive(false);
+        itemSelection.Deselect();
 
         foreach (Customization_ItemHolder customizationItem in purchasableItems)
         {
@@ -49,7 +49,6 @@ public class ShopUI : MonoBehaviour
     {
         itemSelection.Select(item);
         itemSelection.BuyItem();
-        itemSelection.gameObject.SetActive(true);
     }
 
     public void ShowSellPanel()
@@ -65,13 +64,12 @@ public class ShopUI : MonoBehaviour
     {
         itemSelection.Select(item);
         itemSelection.SellItem();
-        itemSelection.gameObject.SetActive(true);
     }
 
     public void UpdateSellShop()
     {
         ClearElements();
-        itemSelection.gameObject.SetActive(false);
+        itemSelection.Deselect();
 
         foreach (Item item in Character_Inventory.items)
         {

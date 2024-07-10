@@ -41,7 +41,7 @@ public static class Character_Inventory
         }
     }
 
-    public static void Buy(Item selectedItem)
+    public static bool Buy(Item selectedItem)
     {
         if(moneyQuantity >= selectedItem.GetCost())
         {
@@ -49,10 +49,12 @@ public static class Character_Inventory
             customizationItems.Add(selectedItem);
 
             Debug.Log($"Item {selectedItem.name} succesfully bought for {selectedItem.GetCost()} coins");
+            return true;
         }
         else
         {
             Debug.LogError("Not enough coins");
+            return false;
         }
     }
 

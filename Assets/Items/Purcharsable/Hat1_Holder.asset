@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
   m_Name: Hat1_Holder
   m_EditorClassIdentifier: 
+  itemName: Wizard hat
+  sprite: {fileID: 21300000, guid: 7061508e1cf572b43b3a0078bd461e69, type: 3}
   value: 100
   canEquip: 1
-  sprite: {fileID: -1094704481, guid: 002b900bf16a2194c9d28104509806e0, type: 3}
-  itemName: Wizard hat
-  itemType: 2
   walkAnimationSheet: {fileID: 11400000, guid: a462e2345db2ce949af3d3f3837215bb, type: 2}
   IdleAnimationSheet: {fileID: 11400000, guid: 86a5b16eb5d6cac4cb21e8572d1d4a9a, type: 2}
+  itemType: 3
+  incompatibleItemType: 2
+  resolveItemIncompatibility: 1

@@ -14,6 +14,11 @@ public class InventoryUI : MonoBehaviour
 
     private List<ItemDisplay> instantiatedItems = new List<ItemDisplay>();
 
+    private void OnEnable()
+    {
+        GameEvents.OnEquipItem += OnEquipItem;
+    }
+
     public void ShowInventory()
     {
         ClearInventory();
@@ -41,7 +46,7 @@ public class InventoryUI : MonoBehaviour
         {
             equipButton.interactable = true;
         }
-    
+
         itemSelection.Select(item);
         itemSelection.EquipItem();
     }
@@ -61,4 +66,15 @@ public class InventoryUI : MonoBehaviour
         ClearInventory();
         inventoryBackground.SetActive(false);
     }
+
+    private void OnEquipItem(Customization_ItemHolder item)
+    {
+        itemSelection.Deselect();
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEquipItem -= OnEquipItem;
+    }
+
 }

@@ -40,6 +40,22 @@ public class Character_AnimationController : MonoBehaviour
                 hatAnimationHolder = item;
                 break;
         }
+
+        if (item.resolveItemIncompatibility)
+        {
+            switch (item.GetItemIncompatibility())
+            {
+                case ItemType.Hair:
+                    hairAnimationHolder = null;
+                    break;
+                case ItemType.Outfit:
+                    clothingAnimationHolder = null;
+                    break;
+                case ItemType.Hat:
+                    hatAnimationHolder = null;
+                    break;
+            }
+        }
     }
 
     private void Update()
