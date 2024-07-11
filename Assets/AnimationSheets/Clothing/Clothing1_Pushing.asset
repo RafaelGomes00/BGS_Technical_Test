@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31062e085b9f2294b8169d80215eda5f, type: 3}
+  m_Name: Clothing1_Pushing
+  m_EditorClassIdentifier: 
+  frameDelay: 8
+  frames:
+  - upSprite: {fileID: 322739202, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    downSprite: {fileID: 1082589583, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    rightSprite: {fileID: -189655651, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    leftSprite: {fileID: 1082665080, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+  - upSprite: {fileID: 996857514, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    downSprite: {fileID: 1108768959, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    rightSprite: {fileID: -1900283734, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    leftSprite: {fileID: -528409848, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+  - upSprite: {fileID: 322739202, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    downSprite: {fileID: 1082589583, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    rightSprite: {fileID: -189655651, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}
+    leftSprite: {fileID: 1082665080, guid: b1a9bbc7e5acee244a00f23cf2486864, type: 3}

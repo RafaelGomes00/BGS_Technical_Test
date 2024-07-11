@@ -144,4 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a4f276e28205b7d49805f497a4cadd7f, type: 2}
+  image: {fileID: 8136010041787384540}
+  doneSprite: {fileID: 21300000, guid: b398f31984f975d439ad74fd48570d89, type: 3}
+  seedsSprite: {fileID: 21300000, guid: 8458ef58f3466354d80d3988eb70647c, type: 3}
   harvestCooldown: 20

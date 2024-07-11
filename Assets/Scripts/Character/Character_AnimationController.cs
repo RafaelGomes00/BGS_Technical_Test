@@ -9,17 +9,19 @@ public class Character_AnimationController : MonoBehaviour
     public Direction moveDirection { get; private set; }
     public float moveValue { get; private set; }
 
-    [Header("Animation Sheet")]
-    [SerializeField] private Customization_ItemHolder bodyAnimationHolder;
-    [SerializeField] private Customization_ItemHolder clothingAnimationHolder;
-    [SerializeField] private Customization_ItemHolder hairAnimationHolder;
-    [SerializeField] private Customization_ItemHolder hatAnimationHolder;
+    [Header("Animations Sheet")]
+    [SerializeField] private Customization_ItemHolder bodySpriteHolder;
+    [SerializeField] private Customization_ItemHolder clothingSpriteHolder;
+    [SerializeField] private Customization_ItemHolder hairSpriteHolder;
+    [SerializeField] private Customization_ItemHolder hatSpriteHolder;
 
     [Header("References")]
     [SerializeField] private SpriteRenderer bodySR;
     [SerializeField] private SpriteRenderer torsoSR;
     [SerializeField] private SpriteRenderer hairSR;
     [SerializeField] private SpriteRenderer hatSR;
+
+    private bool dragging;
 
     private void OnEnable()
     {
@@ -32,13 +34,13 @@ public class Character_AnimationController : MonoBehaviour
         switch (item.GetItemType())
         {
             case ItemType.Hair:
-                hairAnimationHolder = null;
+                hairSpriteHolder = item.GetDefaultOption();
                 break;
             case ItemType.Outfit:
-                clothingAnimationHolder = null;
+                clothingSpriteHolder = item.GetDefaultOption();
                 break;
             case ItemType.Hat:
-                hatAnimationHolder = null;
+                hatSpriteHolder = item.GetDefaultOption();
                 break;
         }
     }
@@ -48,42 +50,46 @@ public class Character_AnimationController : MonoBehaviour
         switch (item.GetItemType())
         {
             case ItemType.Hair:
-                hairAnimationHolder = item;
+                hairSpriteHolder = item;
                 break;
             case ItemType.Outfit:
-                clothingAnimationHolder = item;
+                clothingSpriteHolder = item;
                 break;
             case ItemType.Hat:
-                hatAnimationHolder = item;
+                hatSpriteHolder = item;
                 break;
         }
 
+        //Can be changed on purchasable items holder
         if (item.resolveItemIncompatibility)
         {
             switch (item.GetItemIncompatibility())
             {
                 case ItemType.Hair:
-                    hairAnimationHolder = null;
+                    hairSpriteHolder = null;
                     break;
                 case ItemType.Outfit:
-                    clothingAnimationHolder = null;
+                    clothingSpriteHolder = null;
                     break;
                 case ItemType.Hat:
-                    hatAnimationHolder = null;
+                    hatSpriteHolder = null;
                     break;
             }
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        int frame = (int)(Time.time * bodyAnimationHolder.GetAnimation(moveValue).frameDelay);
-        frame = frame % bodyAnimationHolder.GetAnimation(moveValue).frames.Length;
+        //Get wich frame index should be placed on the Sprite Renderer component
+        int frame = (int)(Time.time * bodySpriteHolder.GetAnimation(moveValue, dragging).frameDelay);
+        //Get the frame of the current animation sheet using the index above
+        frame = frame % bodySpriteHolder.GetAnimation(moveValue, dragging).frames.Length;
 
-        SetAnimationSprite(bodySR, bodyAnimationHolder, frame, moveValue, moveDirection);
-        SetAnimationSprite(torsoSR, clothingAnimationHolder, frame, moveValue, moveDirection);
-        SetAnimationSprite(hairSR, hairAnimationHolder, frame, moveValue, moveDirection);
-        SetAnimationSprite(hatSR, hatAnimationHolder, frame, moveValue, moveDirection);
+        //Set sprites
+        SetAnimationSprite(bodySR, bodySpriteHolder, frame, moveValue, moveDirection, dragging);
+        SetAnimationSprite(torsoSR, clothingSpriteHolder, frame, moveValue, moveDirection, dragging);
+        SetAnimationSprite(hairSR, hairSpriteHolder, frame, moveValue, moveDirection, dragging);
+        SetAnimationSprite(hatSR, hatSpriteHolder, frame, moveValue, moveDirection, dragging);
     }
 
     public void SetMoveValue(float value)
@@ -96,15 +102,25 @@ public class Character_AnimationController : MonoBehaviour
         moveDirection = dir;
     }
 
-    private void SetAnimationSprite(SpriteRenderer renderer, Customization_ItemHolder holder, int frame, float moveValue, Direction moveDirection)
+    private void SetAnimationSprite(SpriteRenderer renderer, Customization_ItemHolder holder, int frame, float moveValue, Direction moveDirection, bool dragging)
     {
         if (holder != null)
         {
             renderer.gameObject.SetActive(true);
-            renderer.sprite = holder.GetAnimation(moveValue).frames[frame].GetFrameFromDirection(moveDirection);
+            renderer.sprite = holder.GetAnimation(moveValue, dragging).frames[frame].GetFrameFromDirection(moveDirection);
         }
         else
             renderer.gameObject.SetActive(false);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Draggable"))
+            dragging = true;
+    }
+    void OnCollisionExit2D(Collision2D col)
+    {
+        dragging = false;
     }
 
     private void OnDisable()

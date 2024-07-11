@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
+  m_Name: Hat1
+  m_EditorClassIdentifier: 
+  itemName: Wizard hat
+  sprite: {fileID: 21300000, guid: 7061508e1cf572b43b3a0078bd461e69, type: 3}
+  value: 100
+  canEquip: 1
+  defaultOption: {fileID: 0}
+  walkAnimationSheet: {fileID: 11400000, guid: a462e2345db2ce949af3d3f3837215bb, type: 2}
+  idleAnimationSheet: {fileID: 11400000, guid: 86a5b16eb5d6cac4cb21e8572d1d4a9a, type: 2}
+  dragAnimationSheet: {fileID: 11400000, guid: c9eff20c7c608314381576e6522c3aeb, type: 2}
+  itemType: 3
+  incompatibleItemType: 2
+  resolveItemIncompatibility: 1

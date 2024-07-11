@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ded23603d164124b88604f4dfff2ab6, type: 3}
+  m_Name: Body0_Default
+  m_EditorClassIdentifier: 
+  itemName: Default_Body
+  sprite: {fileID: 0}
+  value: 0
+  canEquip: 1
+  defaultOption: {fileID: 0}
+  walkAnimationSheet: {fileID: 11400000, guid: 33add6448d0e84b468ccdb556c638410, type: 2}
+  idleAnimationSheet: {fileID: 11400000, guid: 91316eeb266b9f246b14fc83f0b712d7, type: 2}
+  runAnimationSheet: {fileID: 11400000, guid: 0490638b867616b44abe8b786de16e99, type: 2}
+  dragAnimationSheet: {fileID: 11400000, guid: b9e9821581ba69a4883811de99813258, type: 2}
+  itemType: 1
+  incompatibleItemType: 0
+  resolveItemIncompatibility: 0
