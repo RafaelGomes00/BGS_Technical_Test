@@ -226,5 +226,5 @@ SpriteAtlas:
   - Gress 4
   - Gress 8
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: SceneAtlas
   m_IsVariant: 0
