@@ -53,7 +53,9 @@ public class InventoryUI : MonoBehaviour
             if (Character_Inventory.CheckEquippedItem(item as Customization_ItemHolder))
                 itemSelection.SetUnequipButton();
             else
+            {
                 itemSelection.SetEquipButton();
+            }
         }
         else
         {
@@ -73,6 +75,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         instantiatedItems = new List<ItemDisplay>();
+        itemSelection.Deselect();
     }
 
     public void Close()
@@ -90,7 +93,7 @@ public class InventoryUI : MonoBehaviour
     {
         itemSelection.Deselect();
     }
-    
+
     private void OnDisable()
     {
         GameEvents.OnEquipItem -= OnEquipItem;

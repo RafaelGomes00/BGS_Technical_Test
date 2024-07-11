@@ -62,6 +62,7 @@ public class TutorialUI : MonoBehaviour
 
     private void CloseTutorial()
     {
-        tutorialAnimator.SetTrigger("CloseTutorial");
+        if (!tutorialAnimator.GetCurrentAnimatorStateInfo(0).IsName("CloseTutorialAnimation"))
+            tutorialAnimator.SetTrigger("CloseTutorial");
     }
 }
