@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
         darkBackground.SetActive(false);
         inventoryUI.Close();
         shopUI.Close();
+        GameEvents.CloseMenuMethod();
     }
 
     public void ShowInventory()

@@ -25,4 +25,18 @@ public class GameEvents
     {
         OnUnequipItem?.Invoke(selectedItem);
     }
+
+    public delegate void OpenMenu();
+    public static event OpenMenu OnOpenMenu;
+    public static void OpenMenuMethod()
+    {
+        OnOpenMenu?.Invoke();
+    }
+
+    public delegate void CloseMenu();
+    public static event CloseMenu OnCloseMenu;
+    public static void CloseMenuMethod()
+    {
+        OnCloseMenu?.Invoke();
+    }
 }

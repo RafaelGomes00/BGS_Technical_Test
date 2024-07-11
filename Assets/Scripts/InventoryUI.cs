@@ -46,14 +46,18 @@ public class InventoryUI : MonoBehaviour
         if (item.CanEquip())
         {
             equipButton.interactable = true;
+
+            if (Character_Inventory.CheckEquipped(item as Customization_ItemHolder))
+                itemSelection.UnequipItem();
+            else
+                itemSelection.EquipItem();
+        }
+        else
+        {
+            equipButton.interactable = false;
         }
 
         itemSelection.Select(item);
-
-        if (Character_Inventory.CheckEquipped(item as Customization_ItemHolder))
-            itemSelection.UnequipItem();
-        else
-            itemSelection.EquipItem();
     }
 
     private void ClearInventory()

@@ -80,6 +80,7 @@ public static class Character_Inventory
 
     public static bool CheckEquipped(Customization_ItemHolder item)
     {
+        Debug.Log(item);
         return equippedItems.ContainsKey(item.GetItemType()) && equippedItems[item.GetItemType()] == item;
     }
 }
