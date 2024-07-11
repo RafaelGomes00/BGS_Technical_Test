@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [Header("Inventory")]
     [SerializeField] InventoryUI inventoryUI;
 
+    [Header("Tutorial")]
+    [SerializeField] TutorialUI tutorialUI;
 
     //Close menu
     public void Close()
@@ -30,8 +32,19 @@ public class UIManager : MonoBehaviour
 
     public void ShowInventory()
     {
+        tutorialUI.OnPlayerOpenInventory();
         darkBackground.SetActive(true);
         inventoryUI.ShowInventory();
+    }
+
+    public void OnPlayerInteract()
+    {
+        tutorialUI.OnPlayerInteract();
+    }
+
+    public void OnPlayerMove()
+    {
+        tutorialUI.OnPlayerMove();
     }
 
     public void ShowSellShop()
