@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class ItemSelection : MonoBehaviour
 {
+    [SerializeField] GameObject errorText;
+    [SerializeField] Button confirmButton;
     [SerializeField] ItemDisplay selectionDisplay;
     [SerializeField] TextMeshProUGUI selectionName;
     [SerializeField] TextMeshProUGUI selectionPrice;
-    [SerializeField] Button confirmButton;
     [SerializeField] TextMeshProUGUI confirmButtonText;
-    [SerializeField] GameObject errorText;
 
     private Item selectedItem;
 
@@ -27,7 +27,7 @@ public class ItemSelection : MonoBehaviour
         selectedItem = item;
     }
 
-    public void EquipItem()
+    public void SetEquipButton()
     {
         confirmButtonText.text = "Equip";
         confirmButton.onClick.RemoveAllListeners();
@@ -38,7 +38,7 @@ public class ItemSelection : MonoBehaviour
         });
     }
 
-    public void UnequipItem()
+    public void SetUnequipButton()
     {
         confirmButtonText.text = "Unequip";
         confirmButton.onClick.RemoveAllListeners();
@@ -49,7 +49,7 @@ public class ItemSelection : MonoBehaviour
         });
     }
 
-    public void SellItem()
+    public void SetSellButton()
     {
         confirmButtonText.text = "Sell";
         confirmButton.onClick.RemoveAllListeners();
@@ -60,7 +60,7 @@ public class ItemSelection : MonoBehaviour
         });
     }
 
-    public void BuyItem()
+    public void SetBuyButton()
     {
         confirmButtonText.text = "Buy";
         confirmButton.onClick.RemoveAllListeners();

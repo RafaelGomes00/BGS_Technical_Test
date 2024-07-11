@@ -6,21 +6,21 @@ using UnityEngine;
 public static class Character_Inventory
 {
     public static float moneyQuantity { get; private set; }
-    public static List<Item> items { get; private set; }
+    public static List<Item> sellableItems { get; private set; }
     public static List<Item> customizationItems { get; private set; }
 
     private static Dictionary<ItemType, Item> equippedItems = new Dictionary<ItemType, Item>();
 
     public static void OnEnable()
     {
-        items = new List<Item>();
+        sellableItems = new List<Item>();
         customizationItems = new List<Item>();
         GameEvents.OnHarvestCrop += OnHarvestCrop;
     }
 
     private static void OnHarvestCrop(Item crop)
     {
-        items.Add(crop);
+        sellableItems.Add(crop);
     }
 
     public static void OnDisable()
@@ -30,10 +30,10 @@ public static class Character_Inventory
 
     public static void Sell(Item itemToSell)
     {
-        if (items.Contains(itemToSell))
+        if (sellableItems.Contains(itemToSell))
         {
             moneyQuantity += itemToSell.GetCost();
-            items.Remove(itemToSell);
+            sellableItems.Remove(itemToSell);
 
             Debug.Log($"Item {itemToSell.name} succesfully sold for {itemToSell.GetCost()} coins");
         }
@@ -62,12 +62,12 @@ public static class Character_Inventory
 
     public static void Equip(Customization_ItemHolder selectedItem)
     {
-        GameEvents.EquipItemMethod(selectedItem);
-
         if (equippedItems.ContainsKey(selectedItem.GetItemType()))
             equippedItems[selectedItem.GetItemType()] = selectedItem;
         else
             equippedItems.Add(selectedItem.GetItemType(), selectedItem);
+
+        GameEvents.EquipItemMethod(selectedItem);
     }
 
     public static void Unequip(Customization_ItemHolder selectedItem)
@@ -78,9 +78,9 @@ public static class Character_Inventory
         GameEvents.UnequipItemMethod(selectedItem);
     }
 
-    public static bool CheckEquipped(Customization_ItemHolder item)
+    //Check if the equipped given item is already equipped, used for unequip logic
+    public static bool CheckEquippedItem(Customization_ItemHolder item)
     {
-        Debug.Log(item);
         return equippedItems.ContainsKey(item.GetItemType()) && equippedItems[item.GetItemType()] == item;
     }
 }

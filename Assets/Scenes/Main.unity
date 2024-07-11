@@ -12649,7 +12649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622676192}
   m_Layer: 0
-  m_Name: Forest
+  m_Name: ForestLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12696,7 +12696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.36
+      value: -5.7299995
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13586,7 +13586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892339022}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.03, y: 2.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13595,7 +13595,7 @@ Transform:
   - {fileID: 915123470}
   - {fileID: 1017820801}
   - {fileID: 1122149274}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1860223801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &892339028
 MonoBehaviour:
@@ -23299,7 +23299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.48
+      value: -7.8499994
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23595,7 +23595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.42
+      value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25482,7 +25482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575916797}
   m_Layer: 0
-  m_Name: Forest
+  m_Name: ForestRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25813,7 +25813,7 @@ GameObject:
   - component: {fileID: 1604726935}
   - component: {fileID: 1604726936}
   m_Layer: 0
-  m_Name: Char
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26720,12 +26720,13 @@ Transform:
   m_Children:
   - {fileID: 794443646}
   - {fileID: 5102898756325869285}
+  - {fileID: 892339027}
   - {fileID: 622676192}
   - {fileID: 1575916797}
-  - {fileID: 336392939}
   - {fileID: 473487280}
   - {fileID: 1553665998}
   - {fileID: 673920770}
+  - {fileID: 336392939}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1863654924
@@ -26844,12 +26845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e12c2c1257e53342894de49128f4e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  errorText: {fileID: 1560196955}
+  confirmButton: {fileID: 55763192}
   selectionDisplay: {fileID: 1252983917}
   selectionName: {fileID: 159348933}
   selectionPrice: {fileID: 362916412}
-  confirmButton: {fileID: 55763192}
   confirmButtonText: {fileID: 940847294}
-  errorText: {fileID: 1560196955}
 --- !u!1 &1868078162
 GameObject:
   m_ObjectHideFlags: 0
@@ -27562,12 +27563,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e12c2c1257e53342894de49128f4e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  errorText: {fileID: 1269697169}
+  confirmButton: {fileID: 898641197}
   selectionDisplay: {fileID: 1627173275}
   selectionName: {fileID: 1544192376}
   selectionPrice: {fileID: 1438848753}
-  confirmButton: {fileID: 898641197}
   confirmButtonText: {fileID: 1501532953}
-  errorText: {fileID: 1269697169}
 --- !u!1 &2025813075
 GameObject:
   m_ObjectHideFlags: 0
@@ -28219,7 +28220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.14
+      value: -3.51
       objectReference: {fileID: 0}
     - target: {fileID: 466051185565393474, guid: 67c8d44584737a54ea2ce69aaaddd0dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28273,7 +28274,6 @@ SceneRoots:
   - {fileID: 779957384}
   - {fileID: 705507995}
   - {fileID: 1604726931}
-  - {fileID: 892339027}
   - {fileID: 1860223801}
   - {fileID: 1793054160}
   - {fileID: 1622739062}

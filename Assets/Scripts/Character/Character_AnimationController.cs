@@ -9,7 +9,7 @@ public class Character_AnimationController : MonoBehaviour
     public Direction moveDirection { get; private set; }
     public float moveValue { get; private set; }
 
-    [Header("Animation Sheet")]
+    [Header("Animations Sheet")]
     [SerializeField] private Customization_ItemHolder bodySpriteHolder;
     [SerializeField] private Customization_ItemHolder clothingSpriteHolder;
     [SerializeField] private Customization_ItemHolder hairSpriteHolder;
@@ -60,6 +60,7 @@ public class Character_AnimationController : MonoBehaviour
                 break;
         }
 
+        //Can be changed on purchasable items holder
         if (item.resolveItemIncompatibility)
         {
             switch (item.GetItemIncompatibility())
@@ -79,9 +80,12 @@ public class Character_AnimationController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Get wich frame index should be placed on the Sprite Renderer component
         int frame = (int)(Time.time * bodySpriteHolder.GetAnimation(moveValue, dragging).frameDelay);
+        //Get the frame of the current animation sheet using the index above
         frame = frame % bodySpriteHolder.GetAnimation(moveValue, dragging).frames.Length;
 
+        //Set sprites
         SetAnimationSprite(bodySR, bodySpriteHolder, frame, moveValue, moveDirection, dragging);
         SetAnimationSprite(torsoSR, clothingSpriteHolder, frame, moveValue, moveDirection, dragging);
         SetAnimationSprite(hairSR, hairSpriteHolder, frame, moveValue, moveDirection, dragging);
@@ -109,12 +113,6 @@ public class Character_AnimationController : MonoBehaviour
             renderer.gameObject.SetActive(false);
     }
 
-    private void OnDisable()
-    {
-        GameEvents.OnEquipItem -= OnEquipItem;
-        GameEvents.OnUnequipItem -= OnUnequipItem;
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Draggable"))
@@ -123,5 +121,11 @@ public class Character_AnimationController : MonoBehaviour
     void OnCollisionExit2D(Collision2D col)
     {
         dragging = false;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEquipItem -= OnEquipItem;
+        GameEvents.OnUnequipItem -= OnUnequipItem;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
+    [Header("General objects")]
     [SerializeField] GameObject shopPanel;
     [SerializeField] ItemSelection itemSelection;
     [SerializeField] ItemDisplay itemDisplayGO;
@@ -51,7 +52,7 @@ public class ShopUI : MonoBehaviour
     public void OnBuyingItem(Item item)
     {
         itemSelection.Select(item);
-        itemSelection.BuyItem();
+        itemSelection.SetBuyButton();
     }
 
     public void ShowSellPanel()
@@ -66,7 +67,7 @@ public class ShopUI : MonoBehaviour
     public void OnSellingItem(Item item)
     {
         itemSelection.Select(item);
-        itemSelection.SellItem();
+        itemSelection.SetSellButton();
     }
 
     public void UpdateSellShop()
@@ -74,7 +75,7 @@ public class ShopUI : MonoBehaviour
         ClearElements();
         itemSelection.Deselect();
 
-        foreach (Item item in Character_Inventory.items)
+        foreach (Item item in Character_Inventory.sellableItems)
         {
             ItemDisplay newItem = Instantiate(itemDisplayGO, sellableItemsParent);
             newItem.Initialize(item, OnSellingItem);

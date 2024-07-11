@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] InventoryUI inventoryUI;
 
 
+    //Close menu
     public void Close()
     {
         darkBackground.SetActive(false);

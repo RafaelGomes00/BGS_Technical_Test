@@ -26,6 +26,7 @@ public class InventoryUI : MonoBehaviour
 
         inventoryBackground.SetActive(true);
 
+        //First show all the equippable items
         foreach (Item item in Character_Inventory.customizationItems)
         {
             ItemDisplay itemDisplay = Instantiate(itemDisplayGO, itemsDisplayParent);
@@ -33,7 +34,8 @@ public class InventoryUI : MonoBehaviour
             instantiatedItems.Add(itemDisplay);
         }
 
-        foreach (Item item in Character_Inventory.items)
+        //Then show the sellable items
+        foreach (Item item in Character_Inventory.sellableItems)
         {
             ItemDisplay itemDisplay = Instantiate(itemDisplayGO, itemsDisplayParent);
             itemDisplay.Initialize(item, OnClickItem);
@@ -47,10 +49,11 @@ public class InventoryUI : MonoBehaviour
         {
             equipButton.interactable = true;
 
-            if (Character_Inventory.CheckEquipped(item as Customization_ItemHolder))
-                itemSelection.UnequipItem();
+            //If the selected item is the equipped one, change the button to allow the player to unequip the item
+            if (Character_Inventory.CheckEquippedItem(item as Customization_ItemHolder))
+                itemSelection.SetUnequipButton();
             else
-                itemSelection.EquipItem();
+                itemSelection.SetEquipButton();
         }
         else
         {
@@ -60,6 +63,8 @@ public class InventoryUI : MonoBehaviour
         itemSelection.Select(item);
     }
 
+    //Called when the inventory is closed
+    //Just to be sure that there will be no duplicates when opening the inventory
     private void ClearInventory()
     {
         foreach (ItemDisplay item in instantiatedItems)
@@ -85,6 +90,7 @@ public class InventoryUI : MonoBehaviour
     {
         itemSelection.Deselect();
     }
+    
     private void OnDisable()
     {
         GameEvents.OnEquipItem -= OnEquipItem;

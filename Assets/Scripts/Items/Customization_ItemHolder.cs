@@ -14,6 +14,9 @@ public class Customization_ItemHolder : Item
 
     [Header("Item types")]
     [SerializeField] private ItemType itemType;
+
+    //On the used sprites, the hairs and the hats will clip out of each other
+    //This field makes sure that there will be only one item, for preventing clipping
     [SerializeField] private ItemType incompatibleItemType;
 
     public bool resolveItemIncompatibility;
@@ -29,7 +32,7 @@ public class Customization_ItemHolder : Item
     {
         return itemType;
     }
-
+    
     public ItemType GetItemIncompatibility()
     {
         return incompatibleItemType;
